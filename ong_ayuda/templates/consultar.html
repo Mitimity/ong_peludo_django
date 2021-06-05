@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- NOMBRE DE LA PAGINA-->
+    <title>ONG ayuda a un peludo</title>
+</head>
+
+<body bgcolor="bisque">
+    <!-- TITULO DE LA PAGINA-->
+    <center><h1><FONT FACE="impact" SIZE=12 COLOR="purple"> ONG - AYUDA A UN PELUDO </FONT></h1></center>
+
+    <!-- ENCABEZADO DE LA PAGINA-->
+    <center><p><FONT FACE="arial" SIZE=3 COLOR="purple"> En busca de familias para nuestros amiguitos peludos</FONT></p></center> <br>
+
+    <br><div align="right"> <b><a href="{% url 'IND' %}">Volver a inicio</a></b></div><br>
+
+
+    <div style="margin-left: 100px; margin-right: 100px;">
+    <b><FONT FACE="verdana" SIZE=5 COLOR="purple">Mascotas en adopción</FONT></b><br><br>
+
+    {% for reg in mascota %}
+    <table>
+        <tr>
+            <td><img src="{{reg.imagen.url}}" alt=""width="600"></td>
+            <td><FONT FACE="verdana" SIZE=4>
+                <p>Nombre       :{{reg.nombre}}</p><br>
+                <p>Edad         :{{reg.edad}}</p><br>
+                <p>Genero       :{{reg.genero}}</p><br>
+                <p>Esterilizado :{{reg.esterilizado}}</p><br>
+                <p>Numero Chip  :{{reg.chip}}</p><br>
+            </FONT>
+            </td>
+        </tr>
+    </table></div>
+    {% endfor %}
+
+</body>
+</html>
